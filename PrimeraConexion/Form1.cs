@@ -12,6 +12,7 @@ namespace PrimeraConexion
 {
     public partial class Form1 : Form
     {
+        //Creacion de lista para usarla en (1) y (2)
         List<Discos> lista;
         public Form1()
         {
@@ -29,14 +30,14 @@ namespace PrimeraConexion
                 pboxDiscos.Load("https://archive.org/download/placeholder-image/placeholder-image.jpg");
             }
         }
-
+        //Carga de registros al DGV
         private void Form1_Load(object sender, EventArgs e)
         {
             DiscosDataBase DiscosDB = new DiscosDataBase();
-            lista = DiscosDB.listarDiscos();
-            dgvDiscos.DataSource = lista;
+            lista = DiscosDB.listarDiscos(); //(1)
+            dgvDiscos.DataSource = lista; //(2)
         }
-
+        //Puntero para seleccionar los distintos registros
         private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
         {
             Discos seleccionado = (Discos)dgvDiscos.CurrentRow.DataBoundItem;

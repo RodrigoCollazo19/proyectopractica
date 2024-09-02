@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace PrimeraConexion
+{
+    //Clase para generar metodos de acceso a datos
+    internal class DiscosDataBase
+    {
+        public List<Discos> listarDiscos()
+        {
+            List<Discos> listaDiscos = new List<Discos>();
+            try
+            {
+                //Para conectarse a la BD
+                SqlConnection conexion = new SqlConnection();
+
+                //Para realizar acciones sobre la BD
+                SqlCommand comando = new SqlCommand();
+
+                //Para capturar los datos
+                SqlDataReader lector;
+
+                //Condfiguraciones de los objetos
+                //Cadena de string para definir el servidor, la BD y el usuario.
+                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=DISCOS_DB; integrated security=true";
+
+                //Para definir el tipo de comando para las consultas SQL
+                comando.CommandType= System.Data.CommandType.Text;
+
+                //Definir consultas SQL
+                comando.CommandText = "SELECT Titulo, CantidadCanciones, UrlImagenTapa FROM DISCOS";
+
+                //Configurar que ese comando lo realice en esa conexion
+                comando.Connection = conexion;
+                conexion.Open();
+
+                //Ejecuto la lecutra
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    Discos aux = new Discos();
+                    aux.Titulo = (string)lector["Titulo"];
+                    aux.CantidadCanciones = (int)lector["CantidadCanciones"];
+                    aux.UrlImagen = (string)lector["UrlImagenTapa"];
+                    listaDiscos.Add(aux);
+                }
+
+                conexion.Close();
+                return listaDiscos;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+    }
+}

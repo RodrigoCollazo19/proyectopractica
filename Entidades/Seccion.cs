@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PrimeraConexion
+namespace Entidades
 {
-    internal class Estilos
+    public class Seccion
     {
         public int Id { get; set; }
-        public string Descripcion { get; set; }
-
-        //Sobreescribir el metodo tostring para mostrar la descripcion
+        public string Descripcion {  get; set; }
         public override string ToString()
         {
             return Descripcion;

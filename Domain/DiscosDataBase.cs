@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using Entidades;
 
-namespace PrimeraConexion
+namespace Domain
 {
     //Clase para generar metodos de acceso a datos
-    internal class DiscosDataBase
+    public class DiscosDataBase
     {
         public List<Discos> listarDiscos()
         {
@@ -47,6 +48,7 @@ namespace PrimeraConexion
                     Discos aux = new Discos();
                     aux.Titulo = (string)lector["Titulo"];
                     aux.UrlImagen = (string)lector["UrlImagenTapa"];
+                    //Creacion de la asignacion
                     aux.Tipo = new Estilos();
                     aux.Tipo.Descripcion = (string)lector["Tipo"];
                     aux.Edicion = new Seccion();

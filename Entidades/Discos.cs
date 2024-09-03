@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PrimeraConexion
+namespace Entidades
 {
-    internal class Discos
+    public class Discos
     {
         public string Titulo { get; set; }
         public int CantidadCanciones { get; set; }

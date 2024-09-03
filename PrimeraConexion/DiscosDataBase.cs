@@ -33,7 +33,7 @@ namespace PrimeraConexion
                 comando.CommandType= System.Data.CommandType.Text;
 
                 //Definir consultas SQL
-                comando.CommandText = "SELECT Titulo, CantidadCanciones, UrlImagenTapa FROM DISCOS";
+                comando.CommandText = "SELECT D.Titulo, D.UrlImagenTapa, E.Descripcion Tipo, T.Descripcion Edicion FROM DISCOS D, ESTILOS E, TIPOSEDICION T WHERE E.Id = D.IdEstilo AND  T.Id = D.IdTipoEdicion\r\n";
 
                 //Configurar que ese comando lo realice en esa conexion
                 comando.Connection = conexion;
@@ -46,8 +46,11 @@ namespace PrimeraConexion
                 {
                     Discos aux = new Discos();
                     aux.Titulo = (string)lector["Titulo"];
-                    aux.CantidadCanciones = (int)lector["CantidadCanciones"];
                     aux.UrlImagen = (string)lector["UrlImagenTapa"];
+                    aux.Tipo = new Estilos();
+                    aux.Tipo.Descripcion = (string)lector["Tipo"];
+                    aux.Edicion = new Seccion();
+                    aux.Edicion.Descripcion = (string)lector["Edicion"];
                     listaDiscos.Add(aux);
                 }
 

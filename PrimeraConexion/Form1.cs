@@ -36,6 +36,9 @@ namespace PrimeraConexion
             DiscosDataBase DiscosDB = new DiscosDataBase();
             lista = DiscosDB.listarDiscos(); //(1)
             dgvDiscos.DataSource = lista; //(2)
+            //Quitar la columna URL
+            dgvDiscos.Columns["UrlImagen"].Visible = false;
+
         }
         //Puntero para seleccionar los distintos registros
         private void dgvDiscos_SelectionChanged(object sender, EventArgs e)

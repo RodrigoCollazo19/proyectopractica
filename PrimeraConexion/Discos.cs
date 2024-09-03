@@ -11,5 +11,7 @@ namespace PrimeraConexion
         public string Titulo { get; set; }
         public int CantidadCanciones { get; set; }
         public string UrlImagen { get; set; }
+        public Estilos Tipo { get; set; }
+        public Seccion Edicion { get; set; }
     }
 }

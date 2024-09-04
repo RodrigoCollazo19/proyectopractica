@@ -32,16 +32,19 @@
             this.pboxDiscos = new System.Windows.Forms.PictureBox();
             this.lblDiscos = new System.Windows.Forms.Label();
             this.lblImagen = new System.Windows.Forms.Label();
+            this.dgvEstilos = new System.Windows.Forms.DataGridView();
+            this.lblEstilos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxDiscos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstilos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDiscos
             // 
             this.dgvDiscos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiscos.Location = new System.Drawing.Point(59, 113);
+            this.dgvDiscos.Location = new System.Drawing.Point(40, 122);
             this.dgvDiscos.Name = "dgvDiscos";
-            this.dgvDiscos.Size = new System.Drawing.Size(376, 271);
+            this.dgvDiscos.Size = new System.Drawing.Size(158, 278);
             this.dgvDiscos.TabIndex = 0;
             this.dgvDiscos.SelectionChanged += new System.EventHandler(this.dgvDiscos_SelectionChanged);
             // 
@@ -58,11 +61,11 @@
             // 
             this.lblDiscos.AutoSize = true;
             this.lblDiscos.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscos.Location = new System.Drawing.Point(138, 69);
+            this.lblDiscos.Location = new System.Drawing.Point(36, 69);
             this.lblDiscos.Name = "lblDiscos";
-            this.lblDiscos.Size = new System.Drawing.Size(204, 21);
+            this.lblDiscos.Size = new System.Drawing.Size(67, 21);
             this.lblDiscos.TabIndex = 2;
-            this.lblDiscos.Text = "Base de datos DISCOS";
+            this.lblDiscos.Text = "Discos";
             // 
             // lblImagen
             // 
@@ -75,11 +78,31 @@
             this.lblImagen.TabIndex = 3;
             this.lblImagen.Text = "Imagen";
             // 
+            // dgvEstilos
+            // 
+            this.dgvEstilos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstilos.Location = new System.Drawing.Point(296, 122);
+            this.dgvEstilos.Name = "dgvEstilos";
+            this.dgvEstilos.Size = new System.Drawing.Size(158, 278);
+            this.dgvEstilos.TabIndex = 4;
+            // 
+            // lblEstilos
+            // 
+            this.lblEstilos.AutoSize = true;
+            this.lblEstilos.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstilos.Location = new System.Drawing.Point(292, 69);
+            this.lblEstilos.Name = "lblEstilos";
+            this.lblEstilos.Size = new System.Drawing.Size(71, 21);
+            this.lblEstilos.TabIndex = 5;
+            this.lblEstilos.Text = "Estilos";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblEstilos);
+            this.Controls.Add(this.dgvEstilos);
             this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.lblDiscos);
             this.Controls.Add(this.pboxDiscos);
@@ -89,6 +112,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxDiscos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstilos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,6 +124,8 @@
         private System.Windows.Forms.PictureBox pboxDiscos;
         private System.Windows.Forms.Label lblDiscos;
         private System.Windows.Forms.Label lblImagen;
+        private System.Windows.Forms.DataGridView dgvEstilos;
+        private System.Windows.Forms.Label lblEstilos;
     }
 }
 

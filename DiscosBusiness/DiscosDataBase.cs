@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
-using Entidades;
+using Domaine;
 
-namespace Domain
+namespace DiscosBusiness
 {
     //Clase para generar metodos de acceso a datos
     public class DiscosDataBase

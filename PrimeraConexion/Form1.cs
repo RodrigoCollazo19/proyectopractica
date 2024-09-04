@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entidades;
-using Domain;
+using DiscosBusiness;
+using Domaine;
 
 namespace PrimeraConexion
 {
     public partial class Form1 : Form
     {
         //Creacion de lista para usarla en (1) y (2)
-        List<Discos> lista;
+        List<Discos> listaDiscos;
+        List<Estilos> listaEstilos;
         public Form1()
         {
             InitializeComponent();
@@ -36,8 +37,11 @@ namespace PrimeraConexion
         private void Form1_Load(object sender, EventArgs e)
         {
             DiscosDataBase DiscosDB = new DiscosDataBase();
-            lista = DiscosDB.listarDiscos(); //(1)
-            dgvDiscos.DataSource = lista; //(2)
+            EstilosNegocio estilosNegocio = new EstilosNegocio();
+            listaDiscos = DiscosDB.listarDiscos(); //(1)
+            dgvDiscos.DataSource = listaDiscos; //(2)
+            listaEstilos = estilosNegocio.listar();
+            dgvEstilos.DataSource = listaEstilos;
             //Quitar la columna URL
             dgvDiscos.Columns["UrlImagen"].Visible = false;
 
@@ -47,6 +51,8 @@ namespace PrimeraConexion
         {
             Discos seleccionado = (Discos)dgvDiscos.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.UrlImagen);
+            
+
         }
     }
 }

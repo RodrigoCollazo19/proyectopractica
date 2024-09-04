@@ -32,11 +32,26 @@ namespace DiscosBusiness
 
         public void executeQuery()
         {
+            comando.Connection = conexion;
             try
-            {
-                comando.Connection = conexion;
+            {               
                 conexion.Open();
                 lector = comando.ExecuteReader();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void executeAction()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {

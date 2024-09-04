@@ -31,10 +31,10 @@ namespace DiscosBusiness
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=DISCOS_DB; integrated security=true";
 
                 //Para definir el tipo de comando para las consultas SQL
-                comando.CommandType= System.Data.CommandType.Text;
+                comando.CommandType = System.Data.CommandType.Text;
 
                 //Definir consultas SQL
-                comando.CommandText = "SELECT D.Titulo, D.UrlImagenTapa, E.Descripcion Tipo, T.Descripcion Edicion FROM DISCOS D, ESTILOS E, TIPOSEDICION T WHERE E.Id = D.IdEstilo AND  T.Id = D.IdTipoEdicion\r\n";
+                comando.CommandText = "SELECT D.Titulo, D.UrlImagenTapa, D.CantidadCanciones, D.Marca FROM DISCOS D";
 
                 //Configurar que ese comando lo realice en esa conexion
                 comando.Connection = conexion;
@@ -48,20 +48,41 @@ namespace DiscosBusiness
                     Discos aux = new Discos();
                     aux.Titulo = (string)lector["Titulo"];
                     aux.UrlImagen = (string)lector["UrlImagenTapa"];
+                    aux.CantidadCanciones = (int)lector["CantidadCanciones"];
+                    aux.Marca = (string)lector["Marca"];
                     //Creacion de la asignacion
-                    aux.Tipo = new Estilos();
-                    aux.Tipo.Descripcion = (string)lector["Tipo"];
-                    aux.Edicion = new Seccion();
-                    aux.Edicion.Descripcion = (string)lector["Edicion"];
+                    //aux.Tipo = new Estilos();
+                    //aux.Tipo.Descripcion = (string)lector["Tipo"];
+                    //aux.Edicion = new Seccion();
+                    //aux.Edicion.Descripcion = (string)lector["Edicion"];
                     listaDiscos.Add(aux);
                 }
 
                 conexion.Close();
                 return listaDiscos;
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        //Agregamos metodo "agregar" para el AgregarFrm
+        public void Agregar(Discos nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setQuery("INSERT INTO DISCOS (Titulo, CantidadCanciones, Marca) VALUES ('" + nuevo.Titulo + "','" + nuevo.CantidadCanciones + "','" + nuevo.Marca + "')");
+                datos.executeAction();
+            }
             catch (Exception)
             {
+
                 throw;
+            }
+            finally
+            {
+                datos.close();
             }
         }
     }

@@ -34,6 +34,7 @@
             this.lblImagen = new System.Windows.Forms.Label();
             this.dgvEstilos = new System.Windows.Forms.DataGridView();
             this.lblEstilos = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstilos)).BeginInit();
@@ -42,7 +43,7 @@
             // dgvDiscos
             // 
             this.dgvDiscos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiscos.Location = new System.Drawing.Point(40, 122);
+            this.dgvDiscos.Location = new System.Drawing.Point(40, 108);
             this.dgvDiscos.Name = "dgvDiscos";
             this.dgvDiscos.Size = new System.Drawing.Size(158, 278);
             this.dgvDiscos.TabIndex = 0;
@@ -81,7 +82,7 @@
             // dgvEstilos
             // 
             this.dgvEstilos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstilos.Location = new System.Drawing.Point(296, 122);
+            this.dgvEstilos.Location = new System.Drawing.Point(296, 108);
             this.dgvEstilos.Name = "dgvEstilos";
             this.dgvEstilos.Size = new System.Drawing.Size(158, 278);
             this.dgvEstilos.TabIndex = 4;
@@ -96,11 +97,22 @@
             this.lblEstilos.TabIndex = 5;
             this.lblEstilos.Text = "Estilos";
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(40, 403);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(84, 35);
+            this.btnAgregar.TabIndex = 6;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblEstilos);
             this.Controls.Add(this.dgvEstilos);
             this.Controls.Add(this.lblImagen);
@@ -108,6 +120,7 @@
             this.Controls.Add(this.pboxDiscos);
             this.Controls.Add(this.dgvDiscos);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).EndInit();
@@ -126,6 +139,7 @@
         private System.Windows.Forms.Label lblImagen;
         private System.Windows.Forms.DataGridView dgvEstilos;
         private System.Windows.Forms.Label lblEstilos;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
 

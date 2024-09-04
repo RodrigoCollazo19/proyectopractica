@@ -54,5 +54,11 @@ namespace PrimeraConexion
             
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarFrm agregarFrm = new AgregarFrm();
+            agregarFrm.ShowDialog();
+        }
     }
 }

@@ -72,7 +72,8 @@ namespace DiscosBusiness
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setQuery("INSERT INTO DISCOS (Titulo, CantidadCanciones, Marca) VALUES ('" + nuevo.Titulo + "','" + nuevo.CantidadCanciones + "','" + nuevo.Marca + "')");
+                datos.setQuery("INSERT INTO DISCOS (Titulo, CantidadCanciones, Marca, IdEstilo) VALUES ('" + nuevo.Titulo + "','" + nuevo.CantidadCanciones + "','" + nuevo.Marca + "', @idEstilo)");
+                datos.setParameters("@IdEstilo", nuevo.Tipo.Id);
                 datos.executeAction();
             }
             catch (Exception)

@@ -37,18 +37,20 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtbMarca = new System.Windows.Forms.TextBox();
             this.lblMarca = new System.Windows.Forms.Label();
+            this.cbEstilo = new System.Windows.Forms.ComboBox();
+            this.lblEstilo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtCanciones
             // 
-            this.txtCanciones.Location = new System.Drawing.Point(168, 192);
+            this.txtCanciones.Location = new System.Drawing.Point(168, 162);
             this.txtCanciones.Name = "txtCanciones";
             this.txtCanciones.Size = new System.Drawing.Size(151, 20);
             this.txtCanciones.TabIndex = 0;
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(166, 146);
+            this.txtTitulo.Location = new System.Drawing.Point(166, 125);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(151, 20);
             this.txtTitulo.TabIndex = 2;
@@ -66,7 +68,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(69, 153);
+            this.lblTitulo.Location = new System.Drawing.Point(69, 132);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(33, 13);
             this.lblTitulo.TabIndex = 4;
@@ -75,7 +77,7 @@
             // lblCantidadCanciones
             // 
             this.lblCantidadCanciones.AutoSize = true;
-            this.lblCantidadCanciones.Location = new System.Drawing.Point(26, 195);
+            this.lblCantidadCanciones.Location = new System.Drawing.Point(26, 165);
             this.lblCantidadCanciones.Name = "lblCantidadCanciones";
             this.lblCantidadCanciones.Size = new System.Drawing.Size(116, 13);
             this.lblCantidadCanciones.TabIndex = 6;
@@ -103,7 +105,7 @@
             // 
             // txtbMarca
             // 
-            this.txtbMarca.Location = new System.Drawing.Point(168, 229);
+            this.txtbMarca.Location = new System.Drawing.Point(168, 208);
             this.txtbMarca.Name = "txtbMarca";
             this.txtbMarca.Size = new System.Drawing.Size(151, 20);
             this.txtbMarca.TabIndex = 9;
@@ -111,17 +113,37 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(69, 236);
+            this.lblMarca.Location = new System.Drawing.Point(69, 215);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(37, 13);
             this.lblMarca.TabIndex = 10;
             this.lblMarca.Text = "Marca";
+            // 
+            // cbEstilo
+            // 
+            this.cbEstilo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstilo.FormattingEnabled = true;
+            this.cbEstilo.Location = new System.Drawing.Point(168, 254);
+            this.cbEstilo.Name = "cbEstilo";
+            this.cbEstilo.Size = new System.Drawing.Size(151, 21);
+            this.cbEstilo.TabIndex = 11;
+            // 
+            // lblEstilo
+            // 
+            this.lblEstilo.AutoSize = true;
+            this.lblEstilo.Location = new System.Drawing.Point(69, 262);
+            this.lblEstilo.Name = "lblEstilo";
+            this.lblEstilo.Size = new System.Drawing.Size(32, 13);
+            this.lblEstilo.TabIndex = 12;
+            this.lblEstilo.Text = "Estilo";
             // 
             // AgregarFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 437);
+            this.Controls.Add(this.lblEstilo);
+            this.Controls.Add(this.cbEstilo);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.txtbMarca);
             this.Controls.Add(this.btnCancelar);
@@ -134,6 +156,7 @@
             this.Name = "AgregarFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Disco";
+            this.Load += new System.EventHandler(this.AgregarFrm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +173,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtbMarca;
         private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.ComboBox cbEstilo;
+        private System.Windows.Forms.Label lblEstilo;
     }
 }

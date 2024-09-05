@@ -45,6 +45,12 @@ namespace DiscosBusiness
             }
         }
 
+        //Creacion de la funcion para los parametros
+        public void setParameters(string nombre, object o)
+        {
+            comando.Parameters.AddWithValue(nombre, o);
+        }
+
         public void executeAction()
         {
             comando.Connection = conexion;
